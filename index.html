@@ -2,6 +2,7 @@
 <html ng-app="myApp">
     <meta charset='UTF-8'/>
     <head lang="en">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <title>Simple Angular/Require Demo</title>
         <style type="text/css">
             [ng\:cloak], [ng-cloak], .ng-cloak {
@@ -51,81 +52,18 @@
             }
         </style>
     </head>
-    <script data-main='js/main' src='https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.16/require.min.js'></script>
+<script data-main='js/main' src='https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.16/require.min.js'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <body data-ng-controller="mainController" ng-cloak>
-    <table>
-        <tr>
-            <th>Variable</th>
-            <th>Value</th>
-        </tr>
-        <tr>
-            <td class="var">mainCtrlData.messages.greeting</td>
-            <td>{{mainCtrlData.messages.greeting}}</td>
-        </tr>
-        <tr>
-            <td class="var">mainCtrlData.messages.description</td>
-            <td>{{mainCtrlData.messages.description}}</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="var">mainCtrlData.simple</div>
-                <div>
-                    <br/>
-                    <label for="simpleEdit">Edit: </label>
-                    <input type="text" id="simpleEdit" style="width:85%" data-ng-model="mainCtrlData.simple"/>
-                </div>
-            </td>
-            <td>
-                {{mainCtrlData.simple}}
-            </td>
-        </tr>
-        <tr>
-            <td class="var">
-                mainCtrlData.now
-<!--                <br/>-->
-<!--                mainCtrlData.now()-->
-            </td>
-            <td>
-<!--                variable = {{mainCtrlData.now}}-->
-<!--                <br/>-->
-<!--                function = {{now()}}-->
-                {{mainCtrlData.now}}
-            </td>
-        </tr>
-        <tr>
-            <td class="var">
-                <div style="float:left">mainCtrlData.clickCount</div>
-                <div style="float:right">
-                    <button data-ng-click="addClick()">Add</button>
-                </div>
-            </td>
-            <td>{{mainCtrlData.clickCount}}</td>
-        </tr>
-        <tr>
-            <td class="var">mainCtrlData.ifExtra</td>
-            <td>
-                <input type="checkbox" data-ng-model="mainCtrlData.ifExtra"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="var">mainCtrlData.showExtra</td>
-            <td>
-                <input type="checkbox" data-ng-model="mainCtrlData.showExtra"/>
-            </td>
-        </tr>
-    </table>
-    <div class="box" data-ng-if="mainCtrlData.ifExtra">
-        <p>This is displayed when <tt>mainCtrlData.ifExtra</tt> is true.</p>
-        <p>When this is not showing, it is <span class="emphasis">no longer</span> in the DOM.</p>
-    </div>
-    <div class="box" data-ng-show="mainCtrlData.showExtra">
-        <p>This is displayed when <tt>mainCtrlData.showExtra</tt> is true.</p>
-        <p>When this is not showing, it is <span class="emphasis">still</span> in the DOM.</p>
-    </div>
-    <div class="box" data-ng-show="mainCtrlData.clickCount > 10">
-        <p data-ng-if="mainCtrlData.clickCount <= 15">You must really like clicking...</p>
-        <p data-ng-if="mainCtrlData.clickCount > 15 && mainCtrlData.clickCount <= 20">You're just going to keep clicking, aren't you?</p>
-        <p data-ng-if="mainCtrlData.clickCount > 20">Nothing will stop you, click-master!</p>
+    <div class="panel panel-default col-md-12 col-lg-6">
+        <div class="panel-heading">Select your Location Method</div>
+        <div class="panel-body">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
+                <b>Locate ME!</b> </button>
+              <button type="button" class="btn btn-default">Middle</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>
